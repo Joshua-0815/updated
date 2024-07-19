@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/hair.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="booknow.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
+    <title>J Barbeshop</title>
+</head>
+<body>
+    <section class="landing">
+        <nav>
+            <a href="/"><img src="images/wlogo.png" class="logo"></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about_us.html">About</a>
+                <a href="service.html">Services</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="testimonials.html">Testimonial</a>
+                <a href="team.html">Our Team</a>
+            </div>
+            <a href="booknow.html" class="navbar_btn"><span class="button">Book Now</span></a>
+        </nav>
+    </section>
+
+    <section class="section appoin" id="appointment" aria-label="appointment">
+        <div class="container">
+            <div class="appoin-card">
+                <figure class="class card-banner img-holder" style="--width: 250; --height: 774;"></figure>
+
+                <div class="card-content">
+                    <h2 class="h2 section-title">Make an Appointment</h2>
+                    <p class="section-text">
+                        Book an appointment with us to experience what it's like!
+                    </p>
+
+                    <form action="appointment.php" id="appointmentForm" class="appoin-form" onsubmit="return validateEmail()">
+                        <div class="input-wrapper">
+                            <input type="text" name="name" placeholder="Your Full Name" class="input-field" required>
+                            <input type="email" id="email" name="email_address" placeholder="Email Address" required class="input-field">
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="tel" name="phone" placeholder="Phone Number" required class="input-field" pattern="\d*" title="Please enter only numbers" maxlength="15" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                            <select name="category" class="input-field" required>
+                                <option value="Select Service">Select Service</option>
+                                <option value="Haircutting and Fitting">Haircuts</option>
+                                <option value="Beauty and SPA">Special Services</option>
+                                <option value="Beauty and SPA">Shaving</option>
+                            </select>
+                        </div>
+                        <input type="date" name="date" required class="input-field date">
+                        <textarea id="message" name="message" placeholder="Write your message and your chosen offer" class="input-field"></textarea>
+                        
+                        <div class="input-wrapper">
+                            <select name="payment_mode" class="input-field" required>
+                                <option value="">Select Payment Mode</option>
+                                <option value="Credit Card">Credit Card</option>
+                                <option value="Debit Card">Debit Card</option>
+                                <option value="Cash">Cash</option>
+                                <option value="GCash">GCash</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="form-btn">
+                            <span class="span">Appointment Now</span> 
+                            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                        </button>
+                    </form>
+                </div>
+
+                <figure class="class card-banner img-holder" style="--width: 250; --height: 774;"></figure>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function validateEmail() {
+            var email = document.getElementById('email').value;
+            if (!email.endsWith('@gmail.com')) {
+                alert('Please enter a valid Gmail address (@gmail.com).');
+                return false;
+            }
+            return true;
+        }
+
+        const form = document.getElementById('appointmentForm');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Validate the email again before showing the alert message
+            if (validateEmail()) {
+                // Display alert message
+                alert("Booking has been submitted. Please wait for a confirmation on your phone number. Thank you");
+
+                // Reset the form after alert
+                form.reset();
+
+                // Optional: Redirect or reload the page
+                window.location.reload();
+            }
+        });
+    </script>
+</body>
+</html>

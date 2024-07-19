@@ -1,0 +1,134 @@
+html{
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    font-family: 'Cardo';
+}
+.landing {   
+    position: relative;
+    height: 100vh;
+    background-image: url(images/bback.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    margin-bottom: 10px;
+}
+nav{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    font-size: 30px;
+    left: 0;
+    width: 90%;
+    padding: 0 5%;
+    z-index: 1000; 
+    font-family: 'Cardo';
+      
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+    text-align: center;
+    text-align: right;
+    position: relative; 
+    z-index: 1; 
+}
+nav img{
+    padding-top: 5%;
+    width: 320px;
+}
+.nav-links a {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-size: 15px;
+    margin: 0 10px;
+    font-weight: bold;
+    list-style: none;
+    display: inline-block;
+    padding: 3px 3px;
+    position: relative;
+    font-family: 'Cardo';
+    font-size: 20px;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #6a2527;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out;
+}
+
+.nav-links a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 15px 5px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    background: #6a2527;
+    color: #f4f4f4;
+    font-size: 18px;
+}
+.button:hover {
+    transform: scale(1.1);
+}
+.text-box {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 2; 
+}
+.text-box h1 {
+    color: #f4f4f4;
+    margin: 20px 0px 20px;
+    padding-top: 15%;
+    padding-left: 2%;
+    font-size: 75px;
+    text-align: center;
+}
+.text-box h2 {
+    font-size: 18px;
+    color: #f4f4f4;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.btn-box{
+    width: 130px;
+    height: 30px;
+    padding-left: 22%;
+    margin-top: 33%;
+}
+.btn-box a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 15px 5px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    background: #6a2527;
+    color: #f4f4f4;
+    font-size: 20px;
+}
+.btn-box a:hover {
+    transform: scale(1.1);
+}
